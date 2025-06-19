@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" style="min-width:1100px; min-height:700px;">
+<head>
+  <meta name="viewport" content="width=1100, initial-scale=1.0, minimum-scale=1.0">
+  <title>Access Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body style="min-width:1100px; min-height:700px;">
+  <div class="container">
+    <header>
+      <h1>Access Manager</h1>
+    </header>
+    
+    <div class="filters">
+      <div class="search-box">
+        <input type="text" id="search" placeholder="Search files, users, or apps...">
+        <span class="material-icons">search</span>
+      </div>
+      
+      <div class="filter-group">
+        <select id="platform-filter">
+          <option value="">All Platforms</option>
+          <option value="google">Google Workspace</option>
+          <option value="notion">Notion</option>
+          <option value="miro">Miro</option>
+          <option value="luma">Luma</option>
+        </select>
+        
+        <select id="access-filter">
+          <option value="">All Access Levels</option>
+          <option value="view">View Only</option>
+          <option value="edit">Can Edit</option>
+          <option value="owner">Owner</option>
+        </select>
+        
+        <select id="time-filter">
+          <option value="7">Last 7 days</option>
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 90 days</option>
+          <option value="all">All Time</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="access-list">
+      <table class="access-table">
+        <thead>
+          <tr>
+            <th>Application</th>
+            <th>File/Resource</th>
+            <th>Access</th>
+            <th>Shared With</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="access-entries">
+          <!-- Entries will be populated by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
